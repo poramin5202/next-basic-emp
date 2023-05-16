@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import EmpService from '../service/EmpService'
+import AddEmp from './AddEmp'
+import Link from 'next/link'
 
 // rafc
 const ListEmp = () => {
@@ -19,6 +21,9 @@ const ListEmp = () => {
   return (
     <div className="container">
      <h2 className='text-center'> List Employees</h2>
+     <Link href="/addEmp"> 
+      <button className='btn btn-primary mb-2'>Add Emp</button>
+      </Link>
     <table className='table table-bordered table-striped'>
     <thead>
       <tr>
