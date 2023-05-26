@@ -7,5 +7,17 @@ class Emp{
     getAllEmp(){
         return axios.get(EMP_BASE_REST_API_URL)
     }
+
+    createEmp(emp){
+        return axios.post(EMP_BASE_REST_API_URL,emp)
+    }
+
+    getEmpById(empId){
+        return axios.get(EMP_BASE_REST_API_URL + '/' + empId)
+    }
+
+    updateEmp(empId,emp){
+        return axios.put(EMP_BASE_REST_API_URL +'/'+empId, emp)
+    }
 }
 export default new Emp();

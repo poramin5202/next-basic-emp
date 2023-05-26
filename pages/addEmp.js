@@ -2,19 +2,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import HeaderApp from '@/components/HeaderApp'
-import FooterApp from '@/components/FooterApp'
-import ListEmp from '@/components/ListEmp'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import AddEmp from '@/components/AddEmp'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <>
-    <HeaderApp />
-   <h1 className='text-center'>Add Emp</h1> 
-   <FooterApp />
+    <AddEmp />
     </>
   )
 }

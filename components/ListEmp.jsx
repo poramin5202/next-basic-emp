@@ -31,6 +31,7 @@ const ListEmp = () => {
                 <th>Emp First Name</th>
                 <th>Emp Last Name</th>
                 <th>Emp Email</th>
+                <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -42,6 +43,11 @@ const ListEmp = () => {
                             <td>{emp.firstName}</td>
                             <td>{emp.lastName}</td>
                             <td>{emp.email}</td>
+                            <td>
+                              <Link href={`update/${emp.id}`}>
+                                  <button className='btn btn-info'>Update</button>
+                              </Link>
+                            </td>
                         </tr>
                     )
                 }
