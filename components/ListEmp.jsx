@@ -21,7 +21,7 @@ const ListEmp = () => {
 
       }
           
-
+//fdfd
         const delEmp =(emp) =>{
             EmpService.deleteEmp(emp).then((res) => {
                 getAllEmp();
