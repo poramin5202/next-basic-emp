@@ -1,22 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import EmpService from '../service/EmpService'
-import AddEmp from './AddEmp'
+import EmpService from '@/service/EmpService'
 import Link from 'next/link'
+import axios from 'axios'
 
 // rafc
 const ListEmp = () => {
     const [emp, setEmp] = useState([])
 
     useEffect(() => {
+                getAllEmp();
+    },[] )
 
+          const getAllEmp = () =>{
             EmpService.getAllEmp().then((res) =>{
-                setEmp(res.data)
-                console.log(res.data)
-            }).catch(error =>{
-                console.log(error)
-            })
+              setEmp(res.data)
+              console.log(res.data)
+          }).catch(error =>{
+              console.log(error)
+          })
 
-        },[])
+      }
+          
+
+        const delEmp =(emp) =>{
+            EmpService.deleteEmp(emp).then((res) => {
+                getAllEmp();
+            }).catch(e =>{
+              console.log(e)
+            }) 
+        }
 
   return (
     <div className="container">
@@ -47,6 +59,7 @@ const ListEmp = () => {
                               <Link href={`update/${emp.id}`}>
                                   <button className='btn btn-info'>Update</button>
                               </Link>
+                              <button className='btn btn-danger m-lg-2' onClick={() => delEmp(emp.id)} >Delete</button>
                             </td>
                         </tr>
                     )

@@ -15,7 +15,7 @@ const AddEmp = ({data}) => {
     e.preventDefault();
 
       const emp = {firstName, lastName, email}
-      if(data){
+      if(data!=null){
         EmpService.updateEmp(data,emp).then((res) =>{
           router.push('/')
         }).catch(e =>{

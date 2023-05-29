@@ -19,5 +19,9 @@ class Emp{
     updateEmp(empId,emp){
         return axios.put(EMP_BASE_REST_API_URL +'/'+empId, emp)
     }
+
+    deleteEmp(emp){
+        return axios.delete(EMP_BASE_REST_API_URL  + '/'+ emp)
+    }
 }
 export default new Emp();
